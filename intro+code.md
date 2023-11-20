@@ -6,16 +6,15 @@ Blue frame is a matrix of 800x600 blocks. Dirts are rectangles of 20x20. Cleanin
 
 Now we will simulate all the 3 algos one by one. First we go with DFS.(woth code runthrugh).
 
-#*code*
+# *code*
 
-import tkinter as tk
-import time
-from tkinter import colorchooser
-from collections import deque
-from queue import Queue
-import random
-import matplotlib.pyplot as plt
-
+    import tkinter as tk
+    import time
+    from tkinter import colorchooser
+    from collections import deque
+    from queue import Queue
+    import random
+    import matplotlib.pyplot as plt
 
     window_width = 800  # Adjust according to your requirements
     window_height = 600
