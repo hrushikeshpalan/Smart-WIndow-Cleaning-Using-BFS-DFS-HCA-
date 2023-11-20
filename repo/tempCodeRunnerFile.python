@@ -1,0 +1,42 @@
+import tkinter as tk
+
+window_width = 800  # Adjust according to your requirements
+window_height = 600
+
+root = tk.Tk()
+root.title("Window Cleaning Simulation")
+
+canvas = tk.Canvas(root, width=window_width, height=window_height, bg="white")
+canvas.pack()
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Window Cleaning Simulation")
+    root.mainloop()
+
+# Define window and obstacle parameters
+window_rect = canvas.create_rectangle(50, 50, window_width - 50, window_height - 50, outline="black", width=2, fill="lightblue")
+
+# Example obstacle
+obstacle1 = canvas.create_rectangle(200, 200, 300, 300, outline="black", width=2, fill="brown")
+
+# Example cleaning mechanism representation (simple marker)
+cleaning_mechanism = canvas.create_rectangle(50, 50, 70, 70, outline="black", width=2, fill="red")
+
+# Example function to move the cleaning mechanism
+def move_cleaning_mechanism(dx, dy):
+    canvas.move(cleaning_mechanism, dx, dy)
+
+# Example usage
+move_cleaning_mechanism(10, 0)  # Move 10 units to the right
+
+# Example function to handle cleaning mechanism movement logic
+def clean_window():
+    # Implement your cleaning logic here
+    pass
+
+# Example button to trigger the cleaning process
+clean_button = tk.Button(root, text="Clean Window", command=clean_window)
+clean_button.pack()
+    
