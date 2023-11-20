@@ -17,21 +17,22 @@ import random
 import matplotlib.pyplot as plt
 
 
-window_width = 800  # Adjust according to your requirements
-window_height = 600
+    window_width = 800  # Adjust according to your requirements
+    window_height = 600
 
-total_area = (window_height-80)/20 * (window_width-80)/20       
+    total_area = (window_height-80)/20 * (window_width-80)/20       
 
-cleaning_path = []
+    cleaning_path = []
 
-start_time = 0
-end_time = 50
+    start_time = 0
+    end_time = 50
 
 
 
-def detect_dirt(current_position):
+    def detect_dirt(current_position):
     x = current_position[0]
     y = current_position[1]
+    
     # Example: Assume dirt is represented by a specific color on the canvas
     pixel_color = canvas.itemcget(canvas.find_closest(x, y), 'fill')
     
@@ -44,8 +45,9 @@ def detect_dirt(current_position):
     else:
         return False
 
-def get_neighbors(position):
+    def get_neighbors(position):
     x, y = position
+    
     # Assuming 4-connectivity (up, down, left, right)
     neighbors = [
         (x - 20, y),  # Left    
@@ -61,7 +63,8 @@ def get_neighbors(position):
 
     return neighbors
 
-def calculate_movement(current_position, next_position):
+    def calculate_movement(current_position, next_position):
+
     # Assuming each step is one unit in both x and y directions
     current_x, current_y = current_position
     next_x, next_y = next_position
@@ -72,7 +75,7 @@ def calculate_movement(current_position, next_position):
 
     return dx, dy
 
-def detect_dirt_under_mechanism(mechanism_coords, dirt_area_coords):
+    def detect_dirt_under_mechanism(mechanism_coords, dirt_area_coords):
     mech_x1, mech_y1, mech_x2, mech_y2 = mechanism_coords
     dirt_x1, dirt_y1, dirt_x2, dirt_y2 = dirt_area_coords
 
@@ -82,7 +85,7 @@ def detect_dirt_under_mechanism(mechanism_coords, dirt_area_coords):
     else:
         return False
 
-def clean_dirt(mechanism_coords, root):
+    def clean_dirt(mechanism_coords, root):
     dirt_areas = root.find_withtag("dirt")
 
     for dirt in dirt_areas:
@@ -93,7 +96,7 @@ def clean_dirt(mechanism_coords, root):
 
 
 
-if __name__ == "__main__":
+    if __name__ == "__main__":
     root = tk.Tk()
     root.title("Window Cleaning Simulation")
 
